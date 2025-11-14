@@ -22,7 +22,7 @@ behavior of Rust programs.
 
 This is the repository we use to organise and document our work.
 
-If you are wondering how to use Stable MIR in your project, please check out the [Getting Started][tutorial] chapter.
+If you are wondering how to use rustc_public in your project, please check out the [Getting Started][tutorial] chapter.
 
 [gh-pages]: https://rust-lang.github.io/project-stable-mir
 
