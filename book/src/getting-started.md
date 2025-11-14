@@ -1,8 +1,8 @@
 # Getting Started
 
-The StableMIR APIs are currently exposed as a crate in the compiler named `rustc_public`[^release].
-This crate includes the definition of structures and methods to be stabilized,
-which are expected to become the stable APIs in the compiler.
+The supported APIs are currently exposed as a crate in the compiler named `rustc_public`[^release].
+This crate includes the definition of structures and methods to provide a SemVer compliant interface,
+which are expected to become the public APIs in the compiler.
 
 These APIs were designed to provide information about a Rust crate, including the body of functions, as well as type
 and layout information.

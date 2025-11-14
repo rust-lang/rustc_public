@@ -1,5 +1,5 @@
 [book]
-title = "Stable MIR Librarification Project"
+title = "Rustc Librarification Project (formerly Stable MIR)"
 language = "en"
 
 [output.html]
