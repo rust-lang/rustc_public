@@ -14,14 +14,10 @@ implementation is split between two main crates:
 
 - `rustc_public`: Public crate, to be published on crates.io, which will contain
 the stable data structure as well as calls to `rustc_public_bridge` APIs. The
-translation between stable and internal constructs will also be done in this crate,
-however, this is currently implemented in the `rustc_public_bridge` crate.[^translation].
+translation between stable and internal constructs is also done in this crate.
 - `rustc_public_bridge`: This crate implements the public APIs to the compiler.
 It is responsible for gathering all the information requested, and providing
 the data in its unstable form.
-
-[^translation]: This is currently implemented in the `rustc_public_bridge` crate,
-but we are working to change that.
 
 I.e.,
 tools will depend on `rustc_public` crate,
