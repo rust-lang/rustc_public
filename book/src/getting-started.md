@@ -10,9 +10,9 @@ and layout information.
 This chapter has two sections directed at different use cases.
 
 1. If you already have a crate that uses some of the Rust compiler libraries,
-   and you are interested in migrating them to the StableMIR APIs,
-   you can find more details about your use case at the [Migrating to StableMIR](./migrating.md) section.
-2. If you are starting your integration with the Rust compiler via StableMIR, we recommend reading through the
+   and you are interested in migrating them to the `rustc_public` APIs,
+   you can find more details about your use case at the [Migrating to `rustc_public`](./migrating.md) section.
+2. If you are starting your integration with the Rust compiler via `rustc_public`, we recommend reading through the
    [Initial Integration](./initial.md) chapter.
 
 We also include a [Tips and Tricks](./tricks.md) section that is related to a few common obstacles tool writers

@@ -27,12 +27,12 @@ channel = "nightly-2025-10-27"
 components = ["llvm-tools", "rustc-dev", "rust-src"]
 ```
 
-## Initializing StableMIR
+## Initializing `rustc_public`
 
-There's currently no stable way to initialize the Rust compiler and StableMIR.
+There's currently no stable way to initialize the Rust compiler and `rustc_public`.
 See [#0069](https://github.com/rust-lang/project-stable-mir/issues/69) for more details.
 
-Instead, StableMIR includes two unstable workarounds to give you a quick start.
+Instead, `rustc_public` includes two unstable workarounds to give you a quick start.
 The `run` and `run_with_tcx` macros, both from present in the `rustc_public` crate.
 
 In order to use the `run` macro, you first need to declare the following external crates:
@@ -67,9 +67,9 @@ The second option is the `run_with_tcx!()` macro, which is very similar to the `
 The main difference is that this macro passes a copy of the Rust compiler context (`TyCtxt`) to the callback,
 which allows the user to also make calls to internal compiler APIs.
 
-## Scope of StableMIR objects
+## Scope of `rustc_public` objects
 
-StableMIR objects should not be used outside the scope of the callback function.
+`rustc_public` objects should not be used outside the scope of the callback function.
 Any usage outside this scope can panic or return an incorrect value.
 
 For example, the following code is valid, since the logic we are storing is only used while the callback function
@@ -100,7 +100,7 @@ fn broken_print_items(rustc_args: Vec<String>) {
 }
 ```
 
-StableMIR objects should also not be shared across different threads.
+`rustc_public` objects should also not be shared across different threads.
 
 ## Analyzing crate definitions
 
