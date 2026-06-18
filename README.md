@@ -1,4 +1,4 @@
-# Rustc Librarification Project Group (formerly Stable MIR)
+# Rustc Public Project Group (formerly Stable MIR)
 
 <!--
  Status badge advertising the project as being actively worked on. When the
@@ -15,7 +15,7 @@
  relevant links to information about your group.
 -->
 
-Welcome to the repository for the Rustc Librarification Project Group! Our goal is to provide a SemVer compliant
+Welcome to the repository for the Rustc Public Project Group! Our goal is to provide a SemVer compliant
 API based on the rust compiler mid-level intermediate representation (MIR) that can be used as the foundation
 for development of tools that want to perform sophisticated analyses and make stronger guarantees about the
 behavior of Rust programs.

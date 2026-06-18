@@ -1,11 +1,11 @@
 [book]
-title = "Rustc Librarification Project (formerly Stable MIR)"
+title = "Rustc Public Project (formerly Stable MIR)"
 language = "en"
 
 [output.html]
 curly-quotes = true
-git-repository-url = "https://github.com/rust-lang/project-stable-mir"
-site-url = "/project-stable-mir/"
+git-repository-url = "https://github.com/rust-lang/rustc_public"
+site-url = "/rustc_public/"
 
 [output.html.playground]
 runnable = false
