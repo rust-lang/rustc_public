@@ -147,6 +147,15 @@ pub(crate) trait CompilerInterface {
     /// Returns if the ADT is a box.
     fn adt_is_box(&self, def: AdtDef) -> bool;
 
+    /// Returns if the ADT is the phantom data type.
+    fn adt_is_phantom_data(&self, def: AdtDef) -> bool;
+
+    /// Returns if the ADT is an unsafe cell.
+    fn adt_is_unsafe_cell(&self, def: AdtDef) -> bool;
+    
+    /// Returns if the ADT is manually dropped.
+    fn adt_is_manually_drop(&self, def: AdtDef) -> bool;
+
     /// Returns whether this ADT is simd.
     fn adt_is_simd(&self, def: AdtDef) -> bool;
 
@@ -594,7 +603,7 @@ impl<'tcx> CompilerInterface for Container<'tcx, BridgeTys> {
         let cx = &*self.cx.borrow();
         cx.adt_is_simd(def.internal(&mut *tables, cx.tcx))
     }
-
+    
     /// Returns whether this definition is a C string.
     fn adt_is_cstr(&self, def: AdtDef) -> bool {
         let mut tables = self.tables.borrow_mut();
@@ -607,6 +616,27 @@ impl<'tcx> CompilerInterface for Container<'tcx, BridgeTys> {
         let mut tables = self.tables.borrow_mut();
         let cx = &*self.cx.borrow();
         cx.adt_repr(def.internal(&mut *tables, cx.tcx)).stable(&mut *tables, cx)
+    }
+
+    /// Returns if the ADT is the phantom data type.
+    fn adt_is_phantom_data(&self, def: AdtDef) -> bool {
+        let mut tables = self.tables.borrow_mut();
+        let cx = &*self.cx.borrow();
+        cx.adt_is_phantom_data(def.internal(&mut *tables, cx.tcx))
+    }
+
+    /// Returns if the ADT is an unsafe cell.
+    fn adt_is_unsafe_cell(&self, def: AdtDef) -> bool {
+        let mut tables = self.tables.borrow_mut();
+        let cx = &*self.cx.borrow();
+        cx.adt_is_unsafe_cell(def.internal(&mut *tables, cx.tcx))
+    }
+    
+    /// Returns if the ADT is manually dropped.
+    fn adt_is_manually_drop(&self, def: AdtDef) -> bool {
+        let mut tables = self.tables.borrow_mut();
+        let cx = &*self.cx.borrow();
+        cx.adt_is_manually_drop(def.internal(&mut *tables, cx.tcx))
     }
 
     /// Retrieve the function signature for the given generic arguments.
